@@ -1,10 +1,9 @@
-﻿using System.Text.Json;
-using MongoDB.Driver;
+﻿using MongoDB.Driver;
 using MongoDB.Entities;
 using SearchService.Models;
 using SearchService.Services;
 
-namespace SearchService;
+namespace SearchService.Data;
 
 public class DbInitializer
 {

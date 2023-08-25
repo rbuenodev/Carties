@@ -4,7 +4,7 @@ using MassTransit;
 using MongoDB.Entities;
 using SearchService.Models;
 
-namespace SearchService;
+namespace SearchService.Consumers;
 
 public class AuctionUpdatedConsumer : IConsumer<AuctionUpdated>
 {
@@ -26,7 +26,8 @@ public class AuctionUpdatedConsumer : IConsumer<AuctionUpdated>
             x.Color,
             x.Make,
             x.Year,
-            x.Mileage
+            x.Mileage,
+            x.Model
         }, item)
         .ExecuteAsync();
 
