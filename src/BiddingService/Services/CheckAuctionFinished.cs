@@ -1,8 +1,9 @@
-﻿using Contracts.Models;
+﻿using BiddingService.Models;
+using Contracts.Models;
 using MassTransit;
 using MongoDB.Entities;
 
-namespace BiddingService;
+namespace BiddingService.Services;
 
 public class CheckAuctionFinished : BackgroundService
 {
