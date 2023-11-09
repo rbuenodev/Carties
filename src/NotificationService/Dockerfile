@@ -17,15 +17,15 @@ COPY src/NotificationService/NotificationService.csproj src/NotificationService/
 RUN dotnet restore Carties.sln
 
 # Copy the app folder
-COPY src/SearchService src/SearchService
+COPY src/NotificationService src/NotificationService
 COPY src/Contracts src/Contracts
-WORKDIR /app/src/SearchService
+WORKDIR /app/src/NotificationService
 RUN dotnet publish -c Release -o /app/src/out
 
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:7.0
 WORKDIR /app
 COPY --from=build /app/src/out .
-ENTRYPOINT ["dotnet", "SearchService.dll"]
+ENTRYPOINT ["dotnet", "NotificationService.dll"]
 
 
