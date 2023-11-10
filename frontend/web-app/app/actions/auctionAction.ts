@@ -1,6 +1,6 @@
 "use server";
 
-import { Auction, PageResult } from "@/types";
+import { Auction, Bid, PageResult } from "@/types";
 import { NextApiRequest } from "next";
 import { getToken } from "next-auth/jwt";
 import { headers, cookies } from "next/headers";
@@ -51,4 +51,8 @@ export async function getTokenWorkaround() {
 
 export async function deleteAuction(id: string) {
   return await fetchWrappper.del(`auctions/${id}`);
+}
+
+export async function getBidsForAuction(id: string): Promise<Bid[]> {
+  return await fetchWrappper.get(`bids/${id}`);
 }
