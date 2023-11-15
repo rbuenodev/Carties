@@ -8,7 +8,7 @@ export default function LoginButton() {
     <Button
       outline
       onClick={() => {
-        signIn("id-server", { callbackUrl: "/" });
+        signIn("id-server", { callbackUrl: "/" }, { prompt: "login" });
       }}
     >
       Login
